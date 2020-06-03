@@ -1,0 +1,33 @@
+{
+    "userManagement": [],
+    "departments": [
+        {
+            "name": "foundation",
+            "id": "1"
+        },
+        {
+            "name": "company",
+            "id": "2"
+        },
+        {
+            "name": "departments",
+            "id": "3"
+        },
+        {
+            "name": "business-area",
+            "id": "4"
+        },
+        {
+            "name": "objective",
+            "id": "5"
+        },
+        {
+            "name": "kpi",
+            "id": "6"
+        },
+        {
+            "name": "variables",
+            "id": "7"
+        }
+    ]
+}

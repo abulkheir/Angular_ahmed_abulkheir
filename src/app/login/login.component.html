@@ -1,0 +1,42 @@
+<div class="login-inner-wrapper-2">
+    <div class="loginone-wrapper card">
+        <div class="login-content card-body text-center">
+
+            <div class="d-flex justify-content-center mb-4">
+
+                <div class="logo-text mx-2 align-self-center">
+                    <img src="../../assets/img/2p.png">
+                </div>
+            </div>
+            <div class="mb-4">
+
+                <h2 class="font-weight-bold">{{'Sign into your account'|translate}}</h2>
+            </div>
+            <form id="login" #loginForm="ngForm" name="loginForm" (ngSubmit)="logIn(loginForm)" class="login-form">
+
+                <div class="form-group">
+                    <label>{{'email'|translate}}</label>
+                    <input type="text" ngModel #email="ngModel" name="email" email
+                        class="form-control session-input-font input-square" placeholder="{{'email'|translate}}"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label>{{'password'|translate}}</label>
+                    <input name="Password" type="password" ngModel #Password="ngModel"
+                        placeholder="{{'password'|translate}}" class="form-control session-input-font input-square"
+                        required>
+                </div>
+
+                <div class="mb-3 row">
+
+                    <div class="col-12 text-right text-sm-right">
+                        <button type="submit"
+                            class="btn btn-warning btn-block btn-lg btn-square">{{'Sign In'|translate}}</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

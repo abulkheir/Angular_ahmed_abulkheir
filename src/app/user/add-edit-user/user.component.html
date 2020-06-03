@@ -1,0 +1,164 @@
+<div *ngIf="viewIsReady">
+
+    <form #userForm="ngForm" name="userForm" (ngSubmit)="creatUser(userForm)" [formGroup]="ngForm"
+        class="login-form row">
+
+
+        <div class="form-group col-sm-6">
+            <label class="required-field">{{'firstName' | translate}}</label>
+            <input [(ngModel)]="obj.firstName" class="form-control session-input-font input-square" type="text"
+                placeholder="{{'firstName'|translate}}" formControlName="firstName">
+
+            <small *ngIf="ngForm.controls['firstName'].hasError('required') && ngForm.controls['firstName'].touched"
+                class="text-danger">
+                {{ 'MustInclude' | translate }} {{ 'firstName' | translate }}
+            </small>
+            <small *ngIf="ngForm.controls['firstName'].hasError('minlength') && ngForm.controls['firstName'].touched"
+                class="text-danger">
+                {{ 'firstName' | translate }}
+                {{ 'NotLess' | translate }}
+                {{ ngForm.get('firstName').errors.minlength.requiredLength }}
+                {{ 'Chars' | translate }}
+            </small>
+        </div>
+
+        <div class="form-group col-sm-6">
+            <label class="required-field">{{'lastName' | translate}}</label>
+            <input [(ngModel)]="obj.lastName" class="form-control session-input-font input-square" type="text"
+                placeholder="{{'lastName'|translate}}" formControlName="lastName">
+
+            <small *ngIf="ngForm.controls['lastName'].hasError('required') && ngForm.controls['lastName'].touched"
+                class="text-danger">
+                {{ 'MustInclude' | translate }} {{ 'lastName' | translate }}
+            </small>
+            <small *ngIf="ngForm.controls['lastName'].hasError('minlength') && ngForm.controls['lastName'].touched"
+                class="text-danger">
+                {{ 'lastName' | translate }}
+                {{ 'NotLess' | translate }}
+                {{ ngForm.get('lastName').errors.minlength.requiredLength }}
+                {{ 'Chars' | translate }}
+            </small>
+        </div>
+
+        <div class="form-group col-sm-6">
+            <label class="required-field">{{'userName' | translate}}</label>
+            <input [(ngModel)]="obj.userName" class="form-control session-input-font input-square" type="text"
+                placeholder="{{'userName'|translate}}" formControlName="userName">
+
+            <small *ngIf="ngForm.controls['userName'].hasError('required') && ngForm.controls['userName'].touched"
+                class="text-danger">
+                {{'You must include a userName.'|translate}}
+            </small>
+            <small *ngIf="ngForm.controls['userName'].hasError('ContainSpace') &&
+        !ngForm.controls['userName'].hasError('required') &&
+         ngForm.controls['userName'].touched" class="text-danger">
+                {{ 'userName' | translate }}
+                {{ 'ContainSpace' | translate }}
+            </small>
+            <small *ngIf="ngForm.controls['userName'].hasError('minlength') &&
+        !ngForm.controls['userName'].hasError('required') &&
+        !ngForm.controls['userName'].hasError('ContainSpace')  &&
+         ngForm.controls['userName'].touched" class="text-danger">
+                {{'userName'|translate}}
+                {{ 'NotLess' | translate }}
+                {{ ngForm.get('userName').errors.minlength.requiredLength }}
+                {{ 'Chars' | translate }}
+            </small>
+        </div>
+
+
+        <div class=" form-group col-sm-6">
+            <label class="required-field">{{'phoneNumber' | translate}}</label>
+            <input [(ngModel)]="obj.phoneNumber" class="form-control session-input-font input-square" type="text"
+                maxlength="10" placeholder=" {{'phoneNumber'|translate}}" formControlName="phoneNumber">
+
+            <small *ngIf="ngForm.controls['phoneNumber'].hasError('required') &&
+         ngForm.controls['phoneNumber'].touched" class="text-danger">
+                {{'You must include a phoneNumber.'|translate}}
+            </small>
+            <small *ngIf="ngForm.controls['phoneNumber'].errors &&	
+    !(ngForm.controls['phoneNumber'].hasError('required')) &&				 				 
+          ngForm.controls['phoneNumber'].touched" class="text-danger">
+                {{ 'phoneNumber' | translate }} {{ 'NotValid' | translate }}
+
+            </small>
+
+            <small *ngIf="ngForm.controls['phoneNumber'].hasError('minlength')&&
+    ngForm.controls['phoneNumber'].hasError('minlength')&&
+    !(ngForm.controls['phoneNumber'].hasError('required')) &&
+    ngForm.controls['phoneNumber'].touched" class="text-danger">
+                {{'phoneNumber'|translate}}
+                {{ 'NotLess' | translate }}
+                {{ ngForm.get('phoneNumber').errors.minlength.requiredLength }}
+                {{ 'Numbers' | translate }}
+            </small>
+        </div>
+
+        <div class="form-group col-sm-6">
+            <label class="required-field">{{'email' | translate}}</label>
+            <input [(ngModel)]="obj.email" type="email" class="form-control session-input-font input-square"
+                placeholder="{{'email'|translate}}" formControlName="email">
+            <small *ngIf="ngForm.controls['email'].hasError('required') && ngForm.controls['email'].touched"
+                class="text-danger">
+                {{'You must include an email address.'|translate}}
+            </small>
+            <small *ngIf="ngForm.controls['email'].errors && 
+                !(ngForm.controls['email'].hasError('required')) &&
+                 ngForm.controls['email'].touched" class="text-danger">
+                {{'wrong email format'|translate}}
+            </small>
+        </div>
+
+
+        <div class="form-group col-sm-6 mb-4">
+            <label class="required-field">{{'password' | translate}}</label>
+            <input [(ngModel)]="obj.password" type="password" name="password"
+                class="form-control session-input-font input-square" autocomplete="new-password"
+                placeholder="{{'password'|translate}}" formControlName="password">
+
+            <small *ngIf="ngForm.controls['password']?.hasError('required')
+             && ngForm.controls['password']?.touched" class="text-danger">
+                {{'You must include password.'|translate}}
+            </small>
+            <small *ngIf="ngForm.controls['password'].errors && ngForm.controls['password'].hasError('minlength')
+            && !(ngForm.controls['password'].hasError('required')) &&            
+             ngForm.controls['password'].touched">
+                {{'password'|translate}} {{ 'NotLess'|translate }}
+                {{ ngForm.get('password').errors.minlength.requiredLength }}
+                {{ 'Chars'|translate }}
+            </small>
+            <small *ngIf="ngForm.controls['password'].errors &&
+            !(ngForm.controls['password'].hasError('required')) &&        
+            !(ngForm.controls['password'].hasError('minlength')) &&
+             ngForm.controls['password'].touched" class="text-danger">
+                {{'wrong password format'|translate}}
+            </small>
+        </div>
+
+
+        <div class="form-group col-sm-6">
+            <label class="required-field">{{'department' | translate}}</label>
+            <select [(ngModel)]="obj.department" class="form-control session-input-font input-square" name="department"
+                formControlName="department">
+                <option value="">{{'department' | translate}}</option>
+                <option *ngFor="let dep of departments" value="{{dep.id}}">{{dep.name}}</option>
+
+            </select>
+
+            <small *ngIf="ngForm.controls['department'].hasError('required') &&
+         ngForm.controls['department'].touched" class="text-danger">
+                {{ 'MustInclude' | translate }} {{ 'department' | translate }}
+            </small>
+        </div>
+
+        <div class="col-sm-12">
+
+            <button type="submit" *ngIf="!editMode" class="btn btn-warning">{{'save'|translate}}</button>
+            <button type="submit" *ngIf="editMode" class="btn btn-warning">{{'update user'|translate}}</button>
+
+
+        </div>
+
+    </form>
+
+</div>

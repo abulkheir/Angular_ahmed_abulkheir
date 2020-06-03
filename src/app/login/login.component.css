@@ -1,0 +1,68 @@
+input::placeholder
+{
+    align-items: stretch;
+    font-size: 1em;
+  font-style: normal ; 
+  line-height: 1.8em;
+}
+.modal{
+  display: block;
+  background: #00000061;
+  padding: 0;
+}
+.modal-content{
+  padding: 0;
+  padding-bottom: 2rem;
+}
+.modal-header .close {
+  padding: 0;
+  margin: -1rem -1rem -1rem auto;
+}
+.text-primary{
+  columns: #000 !important;
+}
+.btn-warning,.btn-warning:disabled{
+  color: #fff;
+  background: #07706d;
+  border: 1px solid #07706d;
+
+  font-size: 1rem;
+}
+.btn-warning:hover,.btn-warning:visited,.btn-warning:focus,
+.btn-warning:not(:disabled):not(.disabled):active{
+  color: #07706d;
+  background: #fff;
+  border: 1px solid #07706d;
+}
+.text-muted {
+  color: #032827 !important;
+  font-size: 1rem;
+}
+.font-weight-bold{
+  text-align: right;
+}
+.logo-text  img{
+  height: 100px;
+    margin: auto;
+}
+.loginone-wrapper{
+  padding-top: 10px;
+}
+.card{
+    float: left;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 50px;
+}
+label{
+    float: right;
+}
+.login-inner-wrapper-2{
+    background-image: url('../../assets/img/login-background-images-png.png');
+    background-size: contain;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
